@@ -17,7 +17,7 @@ const Content = () => {
   const addTodo=()=>{
     if (input.trim()==="") return;
     const newTodo={
-      id:Math.floor(Math.random()*10+1),
+      id:Date.now(),
       todo:input
     }
 
@@ -55,17 +55,19 @@ const deleteCompleted=(id)=>{
 
         </div>
         <div className='w-2/3'>
+        {todo.length>0?<h4 className='text-lg text-blue-600 px-2'>Todo</h4>:<></>}
+        
           <ul className='p-2 my-2'>{todo.map((item)=>(
-              <li className='bg-blue-500 p-2 m-1 rounded-md shadow-sm shadow-gray-400 flex justify-between' key={item.id}>
+              <li className='bg-blue-500 p-1 m-1 rounded-md shadow-sm shadow-gray-400 flex justify-between' key={item.id}>
                 <div className='text-gray-50 font-bold flex items-center'>
                   
-                <button onClick={()=>checkCompleted(item.id)}><FontAwesomeIcon className='mx-2 p-2 hover:text-green-400 hover:cursor-pointer text-xl ' icon={faCheckSquare}/></button>
+                <button onClick={()=>checkCompleted(item.id)}><FontAwesomeIcon className='mx-2 p-1 hover:text-green-400 hover:cursor-pointer text-xl ' icon={faCheckSquare}/></button>
                 
                 {item.todo}
 
                 </div>
                 <div className='text-xl'>
-                  <button onClick={()=>deleteTodo(item.id)}><FontAwesomeIcon className='mx-2 p-2 text-gray-50 hover:text-red-600 hover:cursor-pointer' icon={faTrash}/></button>
+                  <button onClick={()=>deleteTodo(item.id)}><FontAwesomeIcon className='mx-2 p-1 text-gray-50 hover:text-red-600 hover:cursor-pointer' icon={faTrash}/></button>
                   
                 </div>
                 
@@ -75,17 +77,18 @@ const deleteCompleted=(id)=>{
           </ul>
         </div>
         <div className='w-2/3'>
+        {completed.length>0?<h4 className='text-lg px-2 text-green-600'>Completed Todos</h4>:<></>}
           <ul className='p-2 my-2'>{completed.map((item)=>(
-              <li className='bg-green-500 p-2 m-1 rounded-md shadow-sm shadow-gray-400 flex justify-between' key={item.id}>
+              <li className='bg-green-500 p-1 m-1 rounded-md shadow-sm shadow-gray-400 flex justify-between' key={item.id}>
                 <div className='text-gray-50 font-bold flex items-center'>
                   
-                <button><FontAwesomeIcon className='mx-2 p-2 text-xl ' icon={faCheckSquare}/></button>
+                <button><FontAwesomeIcon className='mx-2 p-1 text-xl ' icon={faCheckSquare}/></button>
                 
                 {item.todo}
 
                 </div>
                 <div className='text-xl'>
-                  <button onClick={()=>deleteCompleted(item.id)}><FontAwesomeIcon className='mx-2 p-2 text-gray-50 hover:text-red-600 hover:cursor-pointer' icon={faTrash}/></button>
+                  <button onClick={()=>deleteCompleted(item.id)}><FontAwesomeIcon className='mx-2 p-1 text-gray-50 hover:text-red-600 hover:cursor-pointer' icon={faTrash}/></button>
                   
                 </div>
                 
