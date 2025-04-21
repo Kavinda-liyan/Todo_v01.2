@@ -4,7 +4,7 @@ import { faTasks } from '@fortawesome/free-solid-svg-icons'
 
 const Nav = () => {
   return (
-    <div className='flex justify-center items-center py-2  text-3xl bg-gray-700'>
+    <div className='flex justify-center items-center py-2  text-3xl bg-gray-700 h-14'>
      
       
       <div className='bg-gray-500 m-1  rounded-lg overflow-hidden flex flex-row shadow-md shadow-gray-800'>
