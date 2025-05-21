@@ -1,6 +1,6 @@
 import Nav from './Nav'
 import Content from './Content'
-import Footer from './footer'
+import Footer from'./Footer'
 
 const Wrapper = () => {
   return (
